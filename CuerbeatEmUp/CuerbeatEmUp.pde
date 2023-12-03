@@ -87,10 +87,10 @@ void loadAudio(){
   sfxdrink=audio.loadSample("sound/sfx/drink.mp3");
   sfxdrink.setGain(1.0);
   gc.pantload.msg=8;
-  mscintro=audio.loadFile("sound/music/intro.mp3");
+  mscintro=audio.loadFile("sound/music/intro_2.mp3");
   mscintro.setGain(-5.0);
   mscintro.setBalance(0.0);
-  mscstage=audio.loadFile("sound/music/stage.mp3");
+  mscstage=audio.loadFile("sound/music/stage_2.mp3");
   mscstage.setBalance(-1.0);
   mscstage.setGain(0.0);
   gc.pantload.msg=9;
