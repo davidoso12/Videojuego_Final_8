@@ -1,0 +1,14 @@
+Versión 15
+* Se implementó la clase HealItem, con la cual se crea un objeto específico para curar. Al momento solo usa un sprite y se desactiva cuando se sale de la pantalla o se colisiona con él. Además tiene efecto de sonido.
+* Se implementó el control de scroll del fondo, el cual se queda quieto cuando el personaje está en la mitad izquierda de la pantalla, se mantiene en medio se puede avanzar sobre el escenario y se puede caminar sobre la mitad derecha cuando se ha llegado al borde final de la escena.
+* Se han agregado muchos factores configurables, como posiciones relativas y tamaños de colisionadores, medidas estándar de botones, duración de temporizadores de invulnerabilidad del personaje tras curarse o ser golpeado y control de visualización de los colisionadores.
+* Las heridas y curaciones ahora ya están temporizadas.
+*Se ajustó el tamaño de los planos de fondo, para que no siempre aparezcan en pantalla. El scroll se detiene cuando el plano más lento, el cielo, llegue al borde de su imagen.
+---------------------------------------------
+Pantallas (opcionales) a agregar
+* Selección de personaje
+* Fin de juego (victoria)
+* Fin de juego (derrota)
+* Minijuego
+* Tutorial o instrucciones
+* Escena

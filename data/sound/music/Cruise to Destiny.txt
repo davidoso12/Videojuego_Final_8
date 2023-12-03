@@ -1,0 +1,13 @@
+0.277126	444.580000	Devotion
+444.579582	675.564000	Betrayal (Sorcerer Theme)
+675.564205	1036.420000	Three Bikes in the Sky
+1036.417058	1283.790000	A Wise Fisherman's Nocturnal Song
+1283.786763	1615.490000	The End of Bondage
+1615.489411	1846.800000	Too Hot for My Chinchilla
+1846.803122	2357.480000	Dream Phantom of the Common Man
+2357.477284	2649.710000	Sungate
+2649.706781	3080.930000	Hoël Dhat the Alchemist
+3080.932348	3427.880000	Cat Scan
+3427.876933	3660.660000	Paradise Cove
+3660.662876	4111.100000	Dreaming in a Kyoto Train
+4111.096748	4406.740000	Moon River
