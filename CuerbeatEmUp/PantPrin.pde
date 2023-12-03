@@ -12,15 +12,18 @@ class PantPrin{
   Boton btncred;
   Boton btntops;
   Boton btnconf;
+  Boton btnnoct;
+  
   Temporizador tmpexit;
   
   PantPrin(){
     imgtit=loadImage("sprite/fondos/caratula.png");
     btnconf=new Boton(990,410,cf.btnw,cf.btnh,10);
     btnplay=new Boton(990,470,cf.btnw,cf.btnh,11);
-    btntops=new Boton(990,530,cf.btnw,cf.btnh,12);
-    btncred=new Boton(990,590,cf.btnw,cf.btnh,13);
-    btnexit=new Boton(990,650,cf.btnw,cf.btnh,14);
+    btnnoct=new Boton(990,300,cf.btnw,cf.btnh,12);
+    btntops=new Boton(990,530,cf.btnw,cf.btnh,13);
+    btncred=new Boton(990,590,cf.btnw,cf.btnh,14);
+    btnexit=new Boton(990,650,cf.btnw,cf.btnh,15);
     tmpexit=new Temporizador(120);
   }
   
@@ -35,6 +38,7 @@ class PantPrin{
     image(imgtit,640,360);
     btnconf.display();
     btnplay.display();
+    btnnoct.display();
     btntops.display();
     btncred.display();
     btnexit.display();
@@ -50,10 +54,14 @@ class PantPrin{
     if(btnconf.isClicked(x,y,b)){ 
       gc.setPantAct(PANTCONF);
     }  
+    if(btnnoct.isClicked(x,y,b)){
+      gc.musicManager(false);
+      gc.setPantAct(PANTGAMEN);
+    } 
     if(btnplay.isClicked(x,y,b)){
       gc.musicManager(false);
       gc.setPantAct(PANTGAME);
-    }  
+    } 
     if(btntops.isClicked(x,y,b))
       gc.setPantAct(PANTTOPS);
     if(btncred.isClicked(x,y,b))
