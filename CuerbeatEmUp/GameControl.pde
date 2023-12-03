@@ -10,6 +10,7 @@
    int pantact; //es la pantalla activa
    PantPrin pantprin;
    PantGame pantgame;
+   PantGamen pantgamen;
    PantLoad pantload;
    PantConfig pantconf;
    PantCredits pantcred;
@@ -20,6 +21,7 @@
    GameControl(){
      pantprin=new PantPrin();
      pantgame=new PantGame();
+     pantgamen=new PantGamen();
      pantload=new PantLoad();
      pantconf=new PantConfig();
      pantcred=new PantCredits();
@@ -34,6 +36,8 @@
        case PANTPRIN: pantprin.display();
                       break;
        case PANTGAME: pantgame.display();
+                      break;
+      case PANTGAMEN: pantgamen.display();
                       break;
        case PANTLOAD: pantload.display();
                       break;
@@ -62,6 +66,8 @@
                        break;
        case PANTGAME:  pantgame.mouseControl(x,y,b);
                        break;
+       case PANTGAMEN: pantgamen.mouseControl(x,y,b);
+                       break;
        case PANTPRIN:  pantprin.mouseControl(x,y,b);
                        break;
        case PANTCRED:  pantcred.mouseControl(x,y,b);
@@ -83,6 +89,19 @@
    void keyRelControl(char k){
      switch(pantact){
        case PANTGAME: pantgame.keyRelControl(k);
+                      break;
+     }  
+   }
+      void keyControlPantGamen(char W){
+     switch(pantact){
+       case PANTGAMEN: pantgamen.keyControlPantGamen(W);
+                      break;
+     }  
+   }
+   
+   void keyRelControlPantGamen(char W){
+     switch(pantact){
+       case PANTGAMEN: pantgamen.keyRelControlPantGamen(W);
                       break;
      }  
    }

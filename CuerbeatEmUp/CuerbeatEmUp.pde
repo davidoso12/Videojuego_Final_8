@@ -16,6 +16,7 @@ final int PANTCONF=3;
 final int PANTCRED=4;
 final int PANTTOPS=5;
 final int PANTPAUS=6;
+final int PANTGAMEN=7;
 final int PANMWALK=0;
 final int PANMDEAD=1;
 final int PANMDEFN=2;
@@ -69,11 +70,14 @@ void mouseReleased(){
 
 void keyReleased(){
   gc.keyRelControl(key);
+  gc.keyRelControlPantGamen(key);
 }
 
 void keyPressed(){
   gc.keyControl(key);
+  gc.keyControlPantGamen(key);
 }
+
 
 void music(){
   if(!gc.getMusicStatus())
