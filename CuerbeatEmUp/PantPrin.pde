@@ -19,9 +19,9 @@ class PantPrin{
   
   PantPrin(){
     imgtit=loadImage("sprite/fondos/caratula.png");
-    btnconf=new Boton(990,410,cf.btnw,cf.btnh,10);
-    btnplay=new Boton(990,470,cf.btnw,cf.btnh,11);
-    btnnoct=new Boton(990,300,cf.btnw,cf.btnh,12);
+    btnconf=new Boton(990,350,cf.btnw,cf.btnh,10);
+    btnplay=new Boton(990,410,cf.btnw,cf.btnh,11);
+    btnnoct=new Boton(990,470,cf.btnw,cf.btnh,21);
     btntops=new Boton(990,530,cf.btnw,cf.btnh,13);
     btncred=new Boton(990,590,cf.btnw,cf.btnh,14);
     btnexit=new Boton(990,650,cf.btnw,cf.btnh,15);
