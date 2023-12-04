@@ -16,6 +16,7 @@
    PantCredits pantcred;
    PantTopScore panttops;
    PantPause pantpause;
+   PantPauses pantpauses;
    boolean musicon;
    
    GameControl(){
@@ -27,6 +28,7 @@
      pantcred=new PantCredits();
      panttops=new PantTopScore();
      pantpause=new PantPause();
+     pantpauses=new PantPauses();
      musicon=false;
      pantact=PANTLOAD;
    }
@@ -48,7 +50,9 @@
        case PANTTOPS: panttops.display();
                       break;
        case PANTPAUS: pantpause.display();
-                      break;               
+                      break;    
+       case PANTPAUSES: pantpauses.display();
+                      break;
      }
    }
    
@@ -75,7 +79,9 @@
        case PANTTOPS:  panttops.mouseControl(x,y,b);
                        break;
        case PANTPAUS:  pantpause.mouseControl(x,y,b);
-                       break;                
+                       break;   
+      case PANTPAUSES: pantpauses.mouseControl(x,y,b);
+                       break;    
      }                    
    }
    

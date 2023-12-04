@@ -7,7 +7,6 @@
 
 class PantGamen{
   Personaje per;
-  Boton btnnoct;
   HealItem hi;
   //PImage escenario;
   //PImage cielo;
@@ -16,7 +15,7 @@ class PantGamen{
   Punto2D imgcie;
   Punto2D imgmon;
   Punto2D imgpis;
-  Boton btnpause;
+  Boton btnpauses;
   Colisionador clatk;
   Colisionador clbdy;
   Colisionador clhel;
@@ -24,9 +23,7 @@ class PantGamen{
   float bal;
   int dir;
   
-  
     PantGamen(){
-    btnnoct=new Boton(440,200,cf.btnw,cf.btnh,20);
     per=new Personaje(140,500,100,200);
     hi=new HealItem(450,500,0,0);
     //escenario=loadImage("sprite/fondos/escenario.png");
@@ -39,7 +36,7 @@ class PantGamen{
     clbdy=new Colisionador(640,400,0,0,30,COLBODY);
     clatk=new Colisionador(300,400,0,0,30,COLATCK);
     enemy=new LifeBar(50,new Punto2D(110,100),new Punto2D(100,40),color(0,150,0),color(255,0,0));
-    btnpause=new Boton(640,685,cf.btnw,cf.btnh,15);
+    btnpauses=new Boton(640,685,cf.btnw,cf.btnh,15);
     bal=-1.0;
     dir=RIGHT;
   }
@@ -51,7 +48,7 @@ class PantGamen{
     stroke(255);
     textAlign(CENTER,CENTER);
     text(idi.getMensaje(0),640,360);
-    //planoCielo();
+//  planoCielo();
     planoFondo();
     planoFrente();
     moverPlanos();
@@ -64,7 +61,7 @@ class PantGamen{
     }  
     hi.display();
     checkColisiones();
-    btnpause.display();
+    btnpauses.display();
     bal+=(dir==RIGHT)?0.001:-0.001;
     if(Math.abs(bal)>=1)
       dir=(bal>=1)?LEFT:RIGHT;
@@ -105,13 +102,11 @@ class PantGamen{
     per.keyRelControl(W);
   }
 
-void mouseControl(int x, int y, int b) {
-  if(btnpause.isClicked(x, y, b)) {
-    mscstage.setVolume(0.15);
-    gc.setPantAct(PANTPAUS);
-  } else if(btnnoct.isClicked(x, y, b)) {
-    gc.setPantAct(PANTPRIN);
-  } 
+  void mouseControl(int x, int y, int b){
+    if(btnpauses.isClicked(x, y, b)){
+      mscstage.setVolume(0.15);
+      gc.setPantAct(PANTPAUSES);
+    }  
     checkColisiones(); // Coloca esta línea fuera del bloque if
   }
 
@@ -134,5 +129,5 @@ void mouseControl(int x, int y, int b) {
       enemy.injure(10);
     if(per.clpnch.isColision(clbdy))
       enemy.injure(5);    
-  }  
+  }
 }

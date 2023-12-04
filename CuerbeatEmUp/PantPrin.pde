@@ -14,6 +14,7 @@ class PantPrin{
   Boton btnconf;
   Boton btnnoct;
   
+  
   Temporizador tmpexit;
   
   PantPrin(){
