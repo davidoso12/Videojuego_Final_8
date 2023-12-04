@@ -39,19 +39,19 @@ class Personaje{
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_walk/",
                         "prota_camina",8,".png",7,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_dead/",
-                        "dead",5,".png",6,false,0));
+                        "pro_dead",16,".png",6,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_defense/",
-                        "idle",5,".png",15,false,0));
+                        "prota_def",3,".png",15,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_hit/",
-                        "attack_",3,".png",18,false,0));
+                        "prota_hit",3,".png",18,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_punch/",
-                        "attack_",6,".png",cf.pp,false,0));
+                        "prota_golpe",9,".png",cf.pp,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_kick/",
-                        "attack_",3,".png",cf.pk,false,0));
+                        "prota_patea",15,".png",cf.pk,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_jump/",
-                        "jump_",8,".png",7,false,0));
+                        "prota_salta",9,".png",7,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_fall/",
-                        "fall_",3,".png",7,false,0));
+                        "prota_cae",14,".png",7,false,0));
     view=RIGHT;                    
   }
   

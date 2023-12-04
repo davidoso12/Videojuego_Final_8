@@ -22,7 +22,7 @@ class Boton {
     an = b;
     al = a;
     t = s;
-    btn = loadImage("sprite/misc/boton-rd.png");
+    btn = loadImage("sprite/misc/boton-r.png");
   }
 
   void display() {
