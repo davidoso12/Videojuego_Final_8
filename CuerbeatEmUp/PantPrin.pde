@@ -19,9 +19,9 @@ class PantPrin{
   
   PantPrin(){
     imgtit=loadImage("sprite/fondos/caratula.png");
-    btnconf=new Boton(990,350,cf.btnw,cf.btnh,10);
+    btnconf=new Boton(990,410,cf.btnw,cf.btnh,10);
     btnplay=new Boton(990,470,cf.btnw,cf.btnh,11);
-    btnnoct=new Boton(990,410,cf.btnw,cf.btnh,00);
+    btnnoct=new Boton(990,300,cf.btnw,cf.btnh,12);
     btntops=new Boton(990,530,cf.btnw,cf.btnh,13);
     btncred=new Boton(990,590,cf.btnw,cf.btnh,14);
     btnexit=new Boton(990,650,cf.btnw,cf.btnh,15);
@@ -34,7 +34,7 @@ class PantPrin{
     fill(0);
     stroke(0);
     textAlign(CENTER,CENTER);
-    text(idi.getMensaje(5),640,360);
+    text(idi.getMensaje(2),640,360);
     imageMode(CENTER);
     image(imgtit,640,360);
     btnconf.display();
@@ -44,10 +44,10 @@ class PantPrin{
     btncred.display();
     btnexit.display();
     if(tmpexit.isActive())
-    tmpexit.coolingDown();
+      tmpexit.coolingDown();
     if(tmpexit.isOff()){
-    bit.cierraBitacora();
-    exit();
+      bit.cierraBitacora();
+      exit();
     }  
   }
   

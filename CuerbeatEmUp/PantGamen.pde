@@ -16,7 +16,6 @@ class PantGamen{
   Punto2D imgmon;
   Punto2D imgpis;
   Boton btnpauses;
-  Boton btnlife;
   Colisionador clatk;
   Colisionador clbdy;
   Colisionador clhel;
@@ -38,7 +37,6 @@ class PantGamen{
     clatk=new Colisionador(300,400,0,0,30,COLATCK);
     enemy=new LifeBar(50,new Punto2D(110,100),new Punto2D(100,40),color(0,150,0),color(255,0,0));
     btnpauses=new Boton(640,685,cf.btnw,cf.btnh,15);
-    btnlife=new Boton(440,400,cf.btnw,cf.btnh,15);
     bal=-1.0;
     dir=RIGHT;
   }
@@ -64,7 +62,6 @@ class PantGamen{
     hi.display();
     checkColisiones();
     btnpauses.display();
-    btnlife.display();
     bal+=(dir==RIGHT)?0.001:-0.001;
     if(Math.abs(bal)>=1)
       dir=(bal>=1)?LEFT:RIGHT;
@@ -110,10 +107,6 @@ class PantGamen{
       mscstage.setVolume(0.15);
       gc.setPantAct(PANTPAUSES);
     }  
-    if(btnlife.isClicked(x, y, b)){
-      mscstage.setVolume(0.15);
-      gc.setPantAct(PANTLIFE);
-    }    
     checkColisiones(); // Coloca esta línea fuera del bloque if
   }
 
