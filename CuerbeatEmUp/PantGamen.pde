@@ -1,4 +1,4 @@
-//Módulo PantGamen
+//Módulo PantGamenn
 //Elaborado por: David Osorio Gutierrez
 //Fecha de creación: 6 de septiembre de 2023 
 //Fecha de última modificacion: 3 de diciembre de 2023
@@ -9,13 +9,13 @@ class PantGamen{
   Personaje per;
   HealItem hi;
   //PImage escenario;
-  //PImage cielo;
+  PImage cielo;
   PImage montes;
   PImage piso;
   Punto2D imgcie;
   Punto2D imgmon;
   Punto2D imgpis;
-  Boton btnpauses;
+  Boton btnpause;
   Colisionador clatk;
   Colisionador clbdy;
   Colisionador clhel;
@@ -23,11 +23,11 @@ class PantGamen{
   float bal;
   int dir;
   
-    PantGamen(){
+  PantGamen(){
     per=new Personaje(140,500,100,200);
     hi=new HealItem(450,500,0,0);
     //escenario=loadImage("sprite/fondos/escenario.png");
-    //cielo=loadImage("sprite/fondos/cielo.png");
+    cielo=loadImage("sprite/fondos/cielo.png");
     montes=loadImage("sprite/fondos/montes.png");
     piso=loadImage("sprite/fondos/piso.png");
     imgcie=new Punto2D(0,0);
@@ -36,19 +36,19 @@ class PantGamen{
     clbdy=new Colisionador(640,400,0,0,30,COLBODY);
     clatk=new Colisionador(300,400,0,0,30,COLATCK);
     enemy=new LifeBar(50,new Punto2D(110,100),new Punto2D(100,40),color(0,150,0),color(255,0,0));
-    btnpauses=new Boton(640,685,cf.btnw,cf.btnh,15);
+    btnpause=new Boton(640,685,cf.btnw,cf.btnh,15);
     bal=-1.0;
     dir=RIGHT;
   }
- 
-   void display(){
+  
+  void display(){
     music();
     background(0);
     fill(255);
     stroke(255);
     textAlign(CENTER,CENTER);
     text(idi.getMensaje(0),640,360);
-//  planoCielo();
+    planoCielo();
     planoFondo();
     planoFrente();
     moverPlanos();
@@ -61,17 +61,17 @@ class PantGamen{
     }  
     hi.display();
     checkColisiones();
-    btnpauses.display();
+    btnpause.display();
     bal+=(dir==RIGHT)?0.001:-0.001;
     if(Math.abs(bal)>=1)
       dir=(bal>=1)?LEFT:RIGHT;
     mscstage.setBalance(bal);  
   }
   
-  //void planoCielo(){
-  //  imageMode(CORNER);
-  //  image(cielo,imgcie.getX(),imgcie.getY());
-  //}
+  void planoCielo(){
+    imageMode(CORNER);
+    image(cielo,imgcie.getX(),imgcie.getY());
+  }
   
   void planoFondo(){
     imageMode(CORNER);
@@ -94,22 +94,21 @@ class PantGamen{
     }
   }
   
-  void keyControlPantGamen(char W){
-    per.keyControl(W);
+  void keyControlPantGamen(char k){
+    per.keyControl(k);
   }
-
-  void keyRelControlPantGamen(char W){
-    per.keyRelControl(W);
+  
+  void keyRelControlPantGamen(char k){
+    per.keyRelControl(k);
   }
-
-  void mouseControl(int x, int y, int b){
-    if(btnpauses.isClicked(x, y, b)){
+  
+  void mouseControl(int x,int y,int b){
+    if(btnpause.isClicked(x,y,b)){
       mscstage.setVolume(0.15);
-      gc.setPantAct(PANTPAUSES);
+      gc.setPantAct(PANTPAUS);
     }  
-    checkColisiones(); // Coloca esta línea fuera del bloque if
   }
-
+  
   void checkColisiones(){
     if(per.clbody.isColision(clatk)){
       per.herir();

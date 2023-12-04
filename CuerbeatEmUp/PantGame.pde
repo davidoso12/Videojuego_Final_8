@@ -27,7 +27,7 @@ class PantGame{
     per=new Personaje(140,500,100,200);
     hi=new HealItem(450,500,0,0);
     //escenario=loadImage("sprite/fondos/escenario.png");
-    cielo=loadImage("sprite/fondos/cielo.png");
+    cielo=loadImage("sprite/fondos/cielo_nocturno.png");
     montes=loadImage("sprite/fondos/montes.png");
     piso=loadImage("sprite/fondos/piso.png");
     imgcie=new Punto2D(0,0);
@@ -130,3 +130,5 @@ class PantGame{
       enemy.injure(5);    
   }
 }
+
+
