@@ -50,7 +50,7 @@ void setup(){
   icon=loadImage("sprite/misc/icon.png");
   size(1280,720);
   //windowMove(2100,100);
-  windowTitle("Proyecto Dario");
+  windowTitle("Proyecto Equipo 8");
   surface.setIcon(icon);
   typtitle=createFont("Arial",32);
   textFont(typtitle);
@@ -88,9 +88,9 @@ void music(){
 
 void loadAudio(){
   gc.pantload.msg=7;
-  sfxclic=audio.loadSample("sound/sfx/click.mp3");
+  sfxclic=audio.loadSample("sound/sfx/click_1.mp3");
   sfxclic.setGain(1.0);
-  sfxdrink=audio.loadSample("sound/sfx/drink.mp3");
+  sfxdrink=audio.loadSample("sound/sfx/healt.mp3");
   sfxdrink.setGain(1.0);
   gc.pantload.msg=8;
   mscintro=audio.loadFile("sound/music/intro_2.mp3");
