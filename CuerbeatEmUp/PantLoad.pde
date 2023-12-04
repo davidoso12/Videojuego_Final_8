@@ -5,28 +5,36 @@
 //Descripción: El módulo PantLoad controla la pantalla
 // de carga inicial de datos del juego.
 
-class PantLoad{
+class PantLoad {
+  PImage imgtit;
   Temporizador tmpidle;
   boolean loading;
   int msg;
   
-  PantLoad(){
-    tmpidle=new Temporizador(180);
-    loading=true;
+  PantLoad() {
+    imgtit = loadImage("sprite/fondos/caratula.png");
+    tmpidle = new Temporizador(180);
+    loading = true;
   }
   
-  void display(){
-    background(128);
+  void display() {
+    background(128); // Establece el fondo primero
+    imageMode(CENTER);
+    image(imgtit, 640, 360);
+    
     fill(255);
     stroke(255);
-    textAlign(CENTER,CENTER);
-    text(idi.getMensaje(1),640,360);
-    text(idi.getMensaje(msg),400,600);
-    if(!loading && !tmpidle.isActive())
+    textAlign(CENTER, CENTER);
+    text(idi.getMensaje(1), 640, 360);
+    text(idi.getMensaje(msg), 400, 600);
+    
+    if (!loading && !tmpidle.isActive())
       tmpidle.activate();
-    if(tmpidle.isActive())
+    
+    if (tmpidle.isActive())
       tmpidle.coolingDown();
-    if(tmpidle.isOff())
+    
+    if (tmpidle.isOff())
       gc.setPantAct(PANTPRIN);
   }
 }

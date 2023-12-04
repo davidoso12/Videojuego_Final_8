@@ -9,7 +9,7 @@ class PantCredits{
   Boton btncan;  //regresa a pantalla principal
   
   PantCredits(){
-    btncan=new Boton(440,200,cf.btnw,cf.btnh,20);
+    btncan=new Boton(640,685,cf.btnw,cf.btnh,20);
   }
   
   void display(){
