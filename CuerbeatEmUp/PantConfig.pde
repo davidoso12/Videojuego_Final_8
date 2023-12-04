@@ -5,58 +5,34 @@
 //Descripción: El módulo PantConfig controla la pantalla
 // de configuración del juego.
 
-class PantConfig {
-  Boton btnIdioma;  // Cambia el idioma
-  Boton btnCancelar;  // Regresa a pantalla principal
-  Boton btnGuardar;  // Guarda configuración
-
-  PImage fondo; // Imagen de fondo con blur
-
-  PantConfig() {
-    btnIdioma = new Boton(width / 2, height / 2, width / 4, height / 5, 4);
-    btnCancelar = new Boton(width / 4, height * 4 / 5, width / 4, height / 5, 5);
-    btnGuardar = new Boton(width * 3 / 4, height * 4 / 5, width / 4, height / 5, 6);
-    fondo = loadImage("sprite/fondos/caratula.png");
+class PantConfig{
+  Boton btnidi;  //cambia el idioma
+  Boton btncan;  //regresa a pantalla principal
+  Boton btnsav;  //guarda configuración
+  
+  PantConfig(){
+    btnidi=new Boton(640,100,cf.btnw,cf.btnh,4);
+    btncan=new Boton(440,200,cf.btnw,cf.btnh,5);
+    btnsav=new Boton(840,200,cf.btnw,cf.btnh,6);
   }
-
-  void display() {
-    // Mostrar imagen de fondo con blur
-    image(fondo, width / 2, height / 2, width, height);
-    filter(BLUR, 5); // Ajusta el valor de blur según tus preferencias
-
-    fill(0);
-    textAlign(CENTER, CENTER);
-
-    // Título de la pantalla en la parte superior
-    textSize(36);
-    text("Configuracciones", width / 2, height / 10);
-     textSize(18);
-
-    text("Cambia la configuración según tus preferencias", width / 2, height / 10 + 30);
-
-
-    // Título de la sección en la parte central
-    textSize(24);
-
-    text("Cambiar Idioma", width / 2, height / 4);
-
-    // Visualización de los botones en la parte central
-    btnIdioma.display();
-
-    // Botones de cancelar y guardar en la parte inferior
-    btnCancelar.display();
-    btnGuardar.display();
+  
+  void display(){
+    background(0,150,0);
+    fill(255);
+    stroke(255);
+    textAlign(CENTER,CENTER);
+    text(idi.getMensaje(3),640,360);
+    btnidi.display();
+    btncan.display();
+    btnsav.display();
   }
-
-  void mouseControl(int x, int y, int b) {
-    // Acciones según el botón presionado
-    if (btnIdioma.isClicked(x, y, b)) 
-      idi.setIdioma((idi.getIdioma() == IDESP) ? IDENG : IDESP);
-
-    if (btnCancelar.isClicked(x, y, b))
+  
+  void mouseControl(int x,int y,int b){
+    if(btnidi.isClicked(x,y,b)) 
+      idi.setIdioma((idi.getIdioma()==IDESP)?IDENG:IDESP);
+    if(btncan.isClicked(x,y,b))
       gc.setPantAct(PANTPRIN);
-
-    if (btnGuardar.isClicked(x, y, b))
+    if(btnsav.isClicked(x,y,b))
       cf.saveConfig(idi);
   }
 }
